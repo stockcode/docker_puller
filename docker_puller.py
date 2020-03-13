@@ -30,6 +30,10 @@ if __name__ == "__main__":
 
     if imageArray[0] == quayPrefix:
       mirror = "quay.azk8s.cn"
+    else:
+      mirror = "dockerhub.azk8s.cn"
+      namespace = imageArray[0]
+
 
     #if imageArray[0] != prefix and imageArray[0] != specialPrefix and imageArray[0] != quayPrefix:
     #    cmd = "docker pull {image}".format(image=image)
@@ -45,6 +49,7 @@ if __name__ == "__main__":
 
     print("-- pull {image} from gcr.azk8s.cn instead --".format(image=image))
     cmd = "docker pull {image}".format(image=newImage)
+    print(cmd)
     execute_sys_cmd(cmd)
 
     cmd = "docker tag {newImage} {image}".format(newImage=newImage, image=image)
