@@ -29,9 +29,9 @@ if __name__ == "__main__":
     imageArray = image.split("/")
 
     if imageArray[0] == quayPrefix:
-      mirror = "quay.azk8s.cn"
+      mirror = "quay.mirrors.ustc.edu.cn"
     else:
-      mirror = "dockerhub.azk8s.cn"
+      mirror = "docker.mirrors.ustc.edu.cn"
       namespace = imageArray[0]
 
 
